@@ -31,14 +31,16 @@
     });
   }
 
+
   window.fbAsyncInit = function() {
-  FB.init({
-    appId      : '{your-app-id}',
-    cookie     : true,  // enable cookies to allow the server to access 
-                        // the session
-    xfbml      : true,  // parse social plugins on this page
-    version    : 'v2.0' // use version 2.0
-  });
+    // 初始化Facebook Javascript SDK
+    FB.init({
+      appId      : 543645739078361,
+      channelUrl : "https://github.com/hummm/test/channel.html", // 你的Channel File網址
+      status     : true, // 是否要在初始化時檢查登入狀態?
+      cookie     : true, // 是否要設定cookies好讓你的伺服器存取session?
+      xfbml      : true  // 是否要在此頁分析XFBML標籤?
+    });
 
   // Now that we've initialized the JavaScript SDK, we call 
   // FB.getLoginStatus().  This function gets the state of the
