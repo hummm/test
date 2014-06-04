@@ -32,8 +32,20 @@
     });
  
     // 在這裡放你其它的初始化程式碼或事件監聽器
+    FB.getLoginStatus(function(response)
+        {
+            if(response.status=="not_authorized") {
+                appGetPermission = false;
+            } else if(response.status=="connected") {
+                appGetPermission = true;
+            }
+        });
+      };
  
-  };
+ FB.login(function(response)
+ {
+      // login status response
+ },{scope:"email,publish_actions"});
  
   // 非同步的載入 SDK 的原始碼
   (function(d){
@@ -44,6 +56,13 @@
      ref.parentNode.insertBefore(js, ref);
    }(document));
 </script>
+	
+	
+	
+	
+	
+	
+	
 	
     <section id="main">
         <h2>This is a HTML5 Canvas Pages with Facebook</h2>
