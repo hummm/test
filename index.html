@@ -19,7 +19,31 @@
 
 
 <body>
-
+	<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    // 初始化Facebook Javascript SDK
+    FB.init({
+      appId      : 543645739078361,
+      channelUrl : 'https://github.com/hummm/test/channel.html', // 你的Channel File網址
+      status     : true, // 是否要在初始化時檢查登入狀態?
+      cookie     : true, // 是否要設定cookies好讓你的伺服器存取session?
+      xfbml      : true  // 是否要在此頁分析XFBML標籤?
+    });
+ 
+    // 在這裡放你其它的初始化程式碼或事件監聽器
+ 
+  };
+ 
+  // 非同步的載入 SDK 的原始碼
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/zh_TW/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+</script>
 	
     <section id="main">
         <h2>This is a HTML5 Canvas Pages with Facebook</h2>
