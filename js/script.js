@@ -4,7 +4,7 @@
 
 window.fbAsyncInit = function () {//facebook init
       FB.init({
-                appId: 543645739078361, 
+                appId: '543645739078361', 
                 xfbml: true,
                 version: 'v2.0'
 //輸入基本的Facebook init的狀態，與Facebook 連接，包括APP ID的設定
