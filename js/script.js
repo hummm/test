@@ -12,9 +12,9 @@ window.fbAsyncInit = function () {//facebook init
 FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
     //呼叫api把圖片放到#preview IMG tag 內
-   var uid = response.authResponse.userID;
+    var uid = response.authResponse.userID;
     var accessToken = response.authResponse.accessToken;
-    console.log(uid);
+    console.log("login");
   } else if (response.status === 'not_authorized') {
     //要求使用者登入，索取publish_actions權限
 	
