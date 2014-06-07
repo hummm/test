@@ -1,1 +1,56 @@
 <script src="//connect.facebook.net/zh_TW/all.js"></script>
+<script>
+
+  window.fbAsyncInit = function() {
+    // 初始化Facebook Javascript SDK
+    FB.init({
+      appId      : 543645739078361,
+      channelUrl : https://github.com/hummm/test/channel.html, // 你的Channel File網址
+      status     : true, // 是否要在初始化時檢查登入狀態?
+      cookie     : true, // 是否要設定cookies好讓你的伺服器存取session?
+      xfbml      : true  // 是否要在此頁分析XFBML標籤?
+    });
+ 
+    // 在這裡放你其它的初始化程式碼或事件監聽器
+    FB.getLoginStatus(function(response)
+        {
+            if(response.status=="not_authorized") {
+                appGetPermission = false;
+            } else if(response.status=="connected") {
+                appGetPermission = true;
+            }
+        });
+      };
+ 
+ FB.login(function(response)
+ {
+      // login status response
+ },{scope:"email,publish_actions"});
+ 
+  // 非同步的載入 SDK 的原始碼
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/zh_TW/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+
+  (function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&appId=543645739078361&version=v2.0";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+   
+     function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      document.getElementById('status').innerHTML =
+        'Thanks for logging in, ' + response.name + '!';
+    });
+  }
+   
+</script>
