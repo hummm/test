@@ -21,7 +21,8 @@ FB.getLoginStatus(function(response) {
               console.log(response);
 		 $("#preview").append(response.picture);
                     });
-     /* FB.api('/me/albums', function (response) {
+     //1.document.getElementById('login').innerHTML = '<img src="http://graph.facebook.com/' + response.id + '/picture" />';               
+     /* 2.FB.api('/me/albums', function (response) {
                 //console.log(response)
                for (album in response.data) {
                     // Find the Profile Picture album
@@ -37,7 +38,24 @@ FB.getLoginStatus(function(response) {
                 }
             });
 */
-    
+   /*3
+FB.api(
+    "/me/picture",
+    {
+        "object": {
+            "redirect": false,
+            "height": "200",
+            "type": "normal",
+            "width": "200"
+        }
+    },
+    function (response) {
+      if (response && !response.error) {
+        // handle the result 
+      }
+    }
+);
+*/
   } else if (response.status === 'not_authorized') {
     //要求使用者登入，索取publish_actions權限
      FB.login(function(response) {
