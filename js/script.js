@@ -15,11 +15,38 @@ FB.getLoginStatus(function(response) {
     var uid = response.authResponse.userID;
     var accessToken = response.authResponse.accessToken;
     console.log("login");
+    alert("you're logged in");
+      });
+    FB.api('/me', function (response) {
+              console.log(response);
+		 $("#preview").append(response.picture);
+                    });
+     /* FB.api('/me/albums', function (response) {
+                //console.log(response)
+               for (album in response.data) {
+                    // Find the Profile Picture album
+                    if (response.data[album].name == "Profile Pictures") {
+                        //console.log("this is the album array" + album)
+                        // Get a list of all photos in that album.
+                        FB.api(response.data[album].id + "/photos", function(response) {
+                            //The image link
+                            image = response.data[0].images[0].source;//finding the newest uploaded profile picture
+                            $('#user').html("<img src=" + image + " class=\"img-thumbnail\"/> " );
+                        });
+                    }
+                }
+            });
+*/
+    
   } else if (response.status === 'not_authorized') {
     //要求使用者登入，索取publish_actions權限
+     FB.login(function(response) {
+ 	},{scope: 'publish_actions});
 	
   } else {
     //同樣要求使用者登入
+     FB.login(function(response) {
+ 	},{scope: 'publish_actions'});
   }
  });
 
