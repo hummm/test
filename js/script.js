@@ -28,6 +28,8 @@ FB.getLoginStatus(function(response) {
     //要求使用者登入，索取publish_actions權限
     FB.login(function(response) {
  	},{scope: "publish_actions"});	
+ 	    console.log("login");
+    alert("you're logged in");
   } else {
     //同樣要求使用者登入
     FB.login(function(response) {
