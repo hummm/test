@@ -22,13 +22,11 @@ FB.getLoginStatus(function(response) {
     FB.api('/me/picture', function (response) {
 	 //console.log(response);
 	 console.log(response.data);
-	 $("#preview").append(response.picture);
+	 $("#preview1").append(response.picture);
 	 });
     FB.api("/me/picture?width=180&height=180",  function(response) {
-
         console.log(response.data.url);
-
-}); 
+        }); 
     
   } else if (response.status === 'not_authorized') {
     //要求使用者登入，索取publish_actions權限
