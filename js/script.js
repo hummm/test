@@ -19,10 +19,10 @@ FB.getLoginStatus(function(response) {
     var accessToken = response.authResponse.accessToken;
     console.log("login");
     alert("you're logged in");
-    FB.api('/me/picture', function (response) {
-	 //console.log(response);
+    FB.api('/me/picture', "post", function (response) {
+	 console.log(response);
 	 console.log(response.data);
-	 $("#preview1").append(response.picture);
+	 $("#UserImg").html("<h5>Here are your profile photo</h5><img src=""></img>")(response.picture);
 	 });
     FB.api("/me/picture?width=180&height=180",  function(response) {
         console.log(response.data.url);
