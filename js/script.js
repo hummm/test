@@ -22,7 +22,7 @@ FB.getLoginStatus(function(response) {
     FB.api('/me/picture', "post", function (response) {
 	 console.log(response);
 	 console.log(response.data);
-	 $("#UserImg").html("<h5>Here are your profile photo</h5><img src="response.data.url"></img>");
+	 $("#UserImg").html("<h5>Here are your profile photo</h5><img src=response.data.url>");
 	 });
     FB.api("/me/picture?width=180&height=180",  function(response) {
         console.log(response.data.url);
