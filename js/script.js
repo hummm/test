@@ -15,55 +15,19 @@ window.fbAsyncInit = function () {
 FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
     //呼叫api把圖片放到#preview IMG tag 內
-      var uid = response.authResponse.userID;
-      var accessToken = response.authResponse.accessToken;
-      FB.api('/me/picture?type=large', function (response) {
-		  $('#UserImg').html("<h5>Here are your profile photo</h5><img src="+response.data.url+" crossOrigin=\"anonymous\" id=preview1 />");          
-      });
-    /*
     var uid = response.authResponse.userID;
     var accessToken = response.authResponse.accessToken;
     console.log("login");
     alert("you're logged in");
-    FB.api('/me/picture', function (response) {
-	 console.log(response);
-	 console.log(response.data);
-	 $('#UserImg').html("<h5>Here are your profile photo</h5>"); 
-	 <img src="+response.data.url+" crossorigin=\"anonymous\" id=preview1 />
-    });
-   
-    FB.api("/me/picture?width=180&height=180",  function(response) {
-        console.log(response.data.url);
-        }); 
-        
-        */
     
   } else if (response.status === 'not_authorized') {
     //要求使用者登入，索取publish_actions權限
-    /*FB.login(function(response) {
- 	},{scope: "<picture,publish_actions"});
- 	window.location.Reload()
-	console.log("login");
-    	alert("you're logged in");
-  */
-   // FB.api('/me/feed', 'post', {message: 'I\'m started using FB API'});
-      FB.login(function (response) {
-          // FB.api('/me/feed', 'post', {message: 'I\'m started using FB API'});
-          if (response.authResponse) { // if user login to your apps right after handle an event
-              window.location.reload();
-          };
-      }, {
-          scope: 'user_about_me,email,user_location,user_photos,publish_actions,user_birthday,user_likes'
-      });
+    FB.login(function(response) {
+ 	},{scope: "publish_actions"});	
   } else {
     //同樣要求使用者登入
-   // FB.login(function(response) {
-// 	},{scope: "publish_actions"});
- FB.login(function (response) {
-          if (response.authResponse) {
-              window.location.reload();
-          }
-	  });
+    FB.login(function(response) {
+ 	},{scope: "publish_actions"});
   }
  });
 
