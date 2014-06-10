@@ -19,6 +19,12 @@ FB.getLoginStatus(function(response) {
     var accessToken = response.authResponse.accessToken;
     console.log("login");
     alert("you're logged in");
+        FB.api('/me/picture', function (response) {
+	 console.log(response);
+	 console.log(response.data);
+	 $('#UserImg').html("<h5>Here are your profile photo</h5>"); 
+	// <img src= response.data.url/* crossorigin=\"anonymous\" id=preview1 *//>
+    });
     
   } else if (response.status === 'not_authorized') {
     //要求使用者登入，索取publish_actions權限
