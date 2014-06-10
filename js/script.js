@@ -22,7 +22,7 @@ FB.getLoginStatus(function(response) {
     FB.api('/me/picture', "post", function (response) {
 	 console.log(response);
 	 console.log(response.data);
-	 $("#UserImg").html("<h5>Here are your profile photo</h5><img src=""></img>")(response.picture);
+	 $("#UserImg").html("<h5>Here are your profile photo</h5><img src="response.data.url"></img>");
 	 });
     FB.api("/me/picture?width=180&height=180",  function(response) {
         console.log(response.data.url);
@@ -31,9 +31,10 @@ FB.getLoginStatus(function(response) {
   } else if (response.status === 'not_authorized') {
     //要求使用者登入，索取publish_actions權限
     FB.login(function(response) {
- 	},{scope: "publish_actions"});	
+ 	},{scope: "<picture,publish_actions"});
+ 	window.location.Reload()
 	console.log("login");
-    alert("you're logged in");
+    	alert("you're logged in");
   } else {
     //同樣要求使用者登入
     FB.login(function(response) {
