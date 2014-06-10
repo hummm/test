@@ -14,12 +14,19 @@ window.fbAsyncInit = function () {
 FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
     //呼叫api把圖片放到#preview IMG tag 內
+    var uid = response.authResponse.userID;
+    var accessToken = response.authResponse.accessToken;
+    console.log("login");
+    alert("you're logged in");
     
   } else if (response.status === 'not_authorized') {
     //要求使用者登入，索取publish_actions權限
-	
+    FB.login(function(response) {
+ 	},{scope: 'publish_actions});	
   } else {
     //同樣要求使用者登入
+    FB.login(function(response) {
+ 	},{scope: 'publish_actions});
   }
  });
 
