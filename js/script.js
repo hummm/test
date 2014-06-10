@@ -20,13 +20,13 @@ FB.getLoginStatus(function(response) {
     console.log("login");
     alert("you're logged in");
     FB.api('/me/picture', function (response) {
-	 console.log(response);
+	 //console.log(response);
 	 console.log(response.data);
 	 $("#preview").append(response.picture);
 	 });
     FB.api("/me/picture?width=180&height=180",  function(response) {
 
-        console.log(response.data);
+        console.log(response.data.url);
 
 }); 
     
