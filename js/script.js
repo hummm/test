@@ -15,6 +15,12 @@ window.fbAsyncInit = function () {
 FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
     //呼叫api把圖片放到#preview IMG tag 內
+      var uid = response.authResponse.userID;
+      var accessToken = response.authResponse.accessToken;
+      FB.api('/me/picture?type=large', function (response) {
+		  $('#UserImg').html("<h5>Here are your profile photo</h5><img src="+response.data.url+" crossorigin=\"anonymous\" id=preview1 />");          
+      });
+    /*
     var uid = response.authResponse.userID;
     var accessToken = response.authResponse.accessToken;
     console.log("login");
@@ -23,12 +29,14 @@ FB.getLoginStatus(function(response) {
 	 console.log(response);
 	 console.log(response.data);
 	 $('#UserImg').html("<h5>Here are your profile photo</h5>"); 
-	 /*<img src="+response.data.url+" crossorigin=\"anonymous\" id=preview1 />*/
+	 <img src="+response.data.url+" crossorigin=\"anonymous\" id=preview1 />
     });
    
     FB.api("/me/picture?width=180&height=180",  function(response) {
         console.log(response.data.url);
         }); 
+        
+        */
     
   } else if (response.status === 'not_authorized') {
     //要求使用者登入，索取publish_actions權限
