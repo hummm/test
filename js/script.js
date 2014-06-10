@@ -29,11 +29,17 @@ FB.getLoginStatus(function(response) {
   } else if (response.status === 'not_authorized') {
     //要求使用者登入，索取publish_actions權限
     FB.login(function(response) {
- 	},{scope: "publish_actions"});	
+    	if (response.authResponse) { 
+              window.location.reload();
+          };
+ 	},{scope: "user_photos,publish_actions"});	
   } else {
     //同樣要求使用者登入
     FB.login(function(response) {
- 	},{scope: "publish_actions"});
+    	if (response.authResponse) { 
+              window.location.reload();
+          };
+ 	});
   }
  });
 
