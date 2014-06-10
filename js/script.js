@@ -22,7 +22,7 @@ FB.getLoginStatus(function(response) {
         FB.api('/me/picture', function (response) {
 	 console.log(response);
 	 console.log(response.data);
-	 $('#UserImg').html("<h5>Here are your profile photo</h5><img src="+response.data.url+" crossorigin=\"anonymous\" id=preview1 />"); 
+	 $('#UserImg').html("<h5>Your profile picture</h5><img src="+response.data.url+" crossorigin=\"anonymous\" id=preview1 />"); 
     });
     
   } else if (response.status === 'not_authorized') {
