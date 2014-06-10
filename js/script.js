@@ -19,18 +19,16 @@ FB.getLoginStatus(function(response) {
     var accessToken = response.authResponse.accessToken;
     console.log("login");
     alert("you're logged in");
-        FB.api('/me/picture?width=180&height=180', function (response) {
-	 console.log(response);
-	 console.log(response.data);
-	 $('#UserPic').html("<h5>Your profile picture</h5><img src="+response.data.url+" crossorigin=\"anonymous\" id=preview1 />"); 
+    FB.api('/me/picture?width=100&height=100', function (response) {
+    console.log(response);
+    console.log(response.data);
+     $('#UserPic').html("<h4>Your profile picture</h4><img src="+response.data.url+" crossorigin=\"anonymous\" id=preview1 />"); 
     });
     
   } else if (response.status === 'not_authorized') {
     //要求使用者登入，索取publish_actions權限
     FB.login(function(response) {
     	if (response.authResponse) { 
-    console.log("login");
-    alert("you're logged in");
               window.location.reload();
           };
  	},{scope: "user_photos,publish_actions"});	
@@ -51,8 +49,8 @@ FB.getLoginStatus(function(response) {
 	var ctx = document.getElementById('canvas').getContext('2d'); //宣告變數找到頁面的canvas標籤的2d內容
 	ctx.font='20px "Arial"'; //設定字體與大小
 	ctx.fillText("Click here to start fill with Facebook Profile Picture", 40, 270); //設定預設的開始畫面
-    var img = new Image(); // 新增圖像1
-    img.src = "img/frame.png"; //圖像路徑（路徑自己設，且自己加入想要的圖層）
+    	var img = new Image(); // 新增圖像1
+    	img.src = "img/frame.png"; //圖像路徑（路徑自己設，且自己加入想要的圖層）
 	var img2 = new Image(); //新增圖像2
 	img2.src = "img/frame.png" //圖像路徑
 	var img3 = new Image();//新增圖像3
