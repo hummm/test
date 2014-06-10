@@ -29,6 +29,8 @@ FB.getLoginStatus(function(response) {
     //要求使用者登入，索取publish_actions權限
     FB.login(function(response) {
     	if (response.authResponse) { 
+    console.log("login");
+    alert("you're logged in");
               window.location.reload();
           };
  	},{scope: "user_photos,publish_actions"});	
