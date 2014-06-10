@@ -19,7 +19,7 @@ FB.getLoginStatus(function(response) {
     var accessToken = response.authResponse.accessToken;
     console.log("login");
     alert("you're logged in");
-    FB.api('/me', function (response) {
+    FB.api('/me/picture', function (response) {
 	 console.log(response);
 	 $("#preview").append(response.picture);
 	 });
@@ -28,7 +28,7 @@ FB.getLoginStatus(function(response) {
     //要求使用者登入，索取publish_actions權限
     FB.login(function(response) {
  	},{scope: "publish_actions"});	
- 	    console.log("login");
+	console.log("login");
     alert("you're logged in");
   } else {
     //同樣要求使用者登入
