@@ -2,73 +2,28 @@
 這檔案協助你編寫JS，請注意每個code block的使用，若你對自己的javascript很有信心，或是你認為我寫的方式有bug，歡迎自行修改編排
 */
 
-window.fbAsyncInit = function () {//facebook init
-      FB.init({
+window.fbAsyncInit = function () {
+	 FB.init({
                 appId: '543645739078361', 
                 xfbml: true,
                 version: 'v2.0'
-//輸入基本的Facebook init的狀態，與Facebook 連接，包括APP ID的設定
+
+
+
 
 FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
     //呼叫api把圖片放到#preview IMG tag 內
-    var uid = response.authResponse.userID;
-    var accessToken = response.authResponse.accessToken;
-    console.log("login");
-    alert("you're logged in");
-      });
-    FB.api('/me', function (response) {
-              console.log(response);
-		 $("#preview").append(response.picture);
-                    });
-     //1.document.getElementById('login').innerHTML = '<img src="http://graph.facebook.com/' + response.id + '/picture" />';               
-     /* 2.FB.api('/me/albums', function (response) {
-                //console.log(response)
-               for (album in response.data) {
-                    // Find the Profile Picture album
-                    if (response.data[album].name == "Profile Pictures") {
-                        //console.log("this is the album array" + album)
-                        // Get a list of all photos in that album.
-                        FB.api(response.data[album].id + "/photos", function(response) {
-                            //The image link
-                            image = response.data[0].images[0].source;//finding the newest uploaded profile picture
-                            $('#user').html("<img src=" + image + " class=\"img-thumbnail\"/> " );
-                        });
-                    }
-                }
-            });
-*/
-   /*3
-FB.api(
-    "/me/picture",
-    {
-        "object": {
-            "redirect": false,
-            "height": "200",
-            "type": "normal",
-            "width": "200"
-        }
-    },
-    function (response) {
-      if (response && !response.error) {
-        // handle the result 
-      }
-    }
-);
-*/
+    
   } else if (response.status === 'not_authorized') {
     //要求使用者登入，索取publish_actions權限
-     FB.login(function(response) {
- 	},{scope: 'publish_actions});
 	
   } else {
     //同樣要求使用者登入
-     FB.login(function(response) {
- 	},{scope: 'publish_actions'});
   }
  });
 
-  
+
 //以下為canvas的程式碼，基本上不需多動，依據comments修改即可
 	
 	//起始畫面
