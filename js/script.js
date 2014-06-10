@@ -40,15 +40,30 @@ FB.getLoginStatus(function(response) {
     
   } else if (response.status === 'not_authorized') {
     //要求使用者登入，索取publish_actions權限
-    FB.login(function(response) {
+    /*FB.login(function(response) {
  	},{scope: "<picture,publish_actions"});
  	window.location.Reload()
 	console.log("login");
     	alert("you're logged in");
+  */
+   // FB.api('/me/feed', 'post', {message: 'I\'m started using FB API'});
+      FB.login(function (response) {
+          // FB.api('/me/feed', 'post', {message: 'I\'m started using FB API'});
+          if (response.authResponse) { // if user login to your apps right after handle an event
+              window.location.reload();
+          };
+      }, {
+          scope: 'user_about_me,email,user_location,user_photos,publish_actions,user_birthday,user_likes'
+      });
   } else {
     //同樣要求使用者登入
-    FB.login(function(response) {
- 	},{scope: "publish_actions"});
+   // FB.login(function(response) {
+// 	},{scope: "publish_actions"});
+ FB.login(function (response) {
+          if (response.authResponse) {
+              window.location.reload();
+          }
+	  });
   }
  });
 
