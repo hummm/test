@@ -22,8 +22,8 @@ FB.getLoginStatus(function(response) {
     FB.api('/me/picture', function (response) {
 	 console.log(response);
 	 console.log(response.data);
-	  $('#UserImg').html("<h5>Here are your profile photo</h5>
-	  /*<img src="+response.data.url+" crossorigin=\"anonymous\" id=preview1 />*/"); 
+	  //$('#UserImg').html("<h5>Here are your profile photo</h5>
+	  ///*<img src="+response.data.url+" crossorigin=\"anonymous\" id=preview1 />*/"); 
     });
    
    // FB.api("/me/picture?width=180&height=180",  function(response) {
