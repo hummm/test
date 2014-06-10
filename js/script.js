@@ -16,7 +16,7 @@ FB.getLoginStatus(function(response) {
     var accessToken = response.authResponse.accessToken;
     console.log("login");
     alert("you're logged in");
-      });
+    
     FB.api('/me', function (response) {
               console.log(response);
 		 $("#preview").append(response.picture);
