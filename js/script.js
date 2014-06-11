@@ -1,7 +1,7 @@
 /*
 這檔案協助你編寫JS，請注意每個code block的使用，若你對自己的javascript很有信心，或是你認為我寫的方式有bug，歡迎自行修改編排
 */
-var authToken ;
+var authToken = ;
 
 window.fbAsyncInit = function () {
 	 FB.init({
