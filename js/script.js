@@ -17,7 +17,7 @@ FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
     //呼叫api把圖片放到#preview IMG tag 內
     var uid = response.authResponse.userID;
-    var accessToken = response.authResponse.accessToken;
+    accessToken = response.authResponse.accessToken;
     window.authToken=accessToken;
     console.log("login");
     alert("you're logged in");
