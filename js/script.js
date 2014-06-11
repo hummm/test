@@ -1,6 +1,7 @@
 /*
 這檔案協助你編寫JS，請注意每個code block的使用，若你對自己的javascript很有信心，或是你認為我寫的方式有bug，歡迎自行修改編排
 */
+var authToken = accessToken;
 
 window.fbAsyncInit = function () {
 	 FB.init({
@@ -16,11 +17,11 @@ FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
     //呼叫api把圖片放到#preview IMG tag 內
     var uid = response.authResponse.userID;
-    var accessToken = response.authResponse.accessToken;
+    accessToken = response.authResponse.accessToken;
     window.authToken=accessToken;
     console.log("login");
     alert("you're logged in");
-    FB.api('/me/picture?width=100&height=100', function (response) {
+    FB.api('/me/picture?width=200&height=200', function (response) {
     console.log(response);
     console.log(response.data);
      $('#UserPic').append('<h4>Your profile picture</h4><img crossorigin="Anonymous" src='+response.data.url+" id=preview1 />"); 
