@@ -18,7 +18,7 @@ FB.getLoginStatus(function(response) {
     //呼叫api把圖片放到#preview IMG tag 內
     var uid = response.authResponse.userID;
     authToken = response.authResponse.accessToken;
-    console.log("login");
+    console.log(authToken);
     alert("you're logged in");
     FB.api('/me/picture?width=200&height=200', function (response) {
     console.log(response);
