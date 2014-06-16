@@ -37,7 +37,8 @@ a{
 }
 body {
 	background: #f5f0e0 url(http://subtlepatterns.com/patterns/ricepaper_v3.png);
-	font-family: Century Gothic, sans-serif;
+	font-family:"Microsoft JhengHei","Microsoft YaHei",Arial;
+	/*font-family: Century Gothic, sans-serif;*/
 	color: #252525;
 	font-size: 14px;
 	text-shadow: 0 0 1px rgba(0, 0, 0, 0.10);
@@ -233,7 +234,7 @@ ul#nav{
 	margin: 0 auto;
 	text-align: center;
 	overflow: hidden;
-	font-size: 22px;
+	font-size: 20px;
 	letter-spacing: 1px;
 }
 ul#nav li {
