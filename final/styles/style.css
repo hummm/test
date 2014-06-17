@@ -2,6 +2,7 @@
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, address {
 	margin: 0;
 	padding: 0;
+    font-family:Georgia ,"微軟正黑體" ,"新細明體", "細明體" ;
 }
 table {
 	border-collapse: collapse;
@@ -37,7 +38,7 @@ a{
 }
 body {
 	background: #f5f0e0 url(http://subtlepatterns.com/patterns/ricepaper_v3.png);
-	font-family:"Microsoft JhengHei","Microsoft YaHei",Arial;
+	font-family:Georgia ,"微軟正黑體" ,"新細明體", "細明體" ;
 	/*font-family: Century Gothic, sans-serif;*/
 	color: #252525;
 	font-size: 14px;
@@ -62,7 +63,7 @@ h6 {
 	font-size: 25px;
 }
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Lobster13Regular', cursive;
+	font-family:Georgia ,"微軟正黑體" ,"新細明體", "細明體" ;
 	color: #9c5959;
 	text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 	font-weight: normal;
@@ -97,7 +98,7 @@ a {
 	margin-left: 10px;
 }
 .title {
-	font-family: 'Lobster13Regular', cursive;
+	font-family:Georgia ,"微軟正黑體" ,"新細明體", "細明體" ;
 	font-size: 60px;  /* 80px*/
 	float: left;
 	-webkit-transition: all .20s ease-out;
@@ -115,7 +116,7 @@ a {
 	transition: all .20s ease-out;
 }
 .tagline {
-	font-family: 'Lobster13Regular', cursive;
+	 font-family:Georgia ,"微軟正黑體" ,"新細明體", "細明體" ;
 	clear: both;
 	font-size: 27px;
 	float: left;
@@ -288,7 +289,7 @@ ul#nav li a:hover, ul#nav li .current {
 }
 p {
 	font-size: 14px;
-	font-family: Century Gothic, sans-serif;
+	 font-family:Georgia ,"微軟正黑體" ,"新細明體", "細明體" ;
 	padding: 10px;
 }
 article {
